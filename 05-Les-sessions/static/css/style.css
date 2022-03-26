@@ -1,0 +1,44 @@
+body {
+    background-color:aliceblue;
+    margin: 0;
+}
+
+#navbar {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: lightskyblue;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#navbar-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+}
+
+.navbar-item {
+    margin: 0 10px;
+}
+
+.navbar-item.login-logout {
+    margin-left: auto;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    display: block;
+    color: #333;
+    font-weight: bold;
+}
+
+.navbar-item a:hover {
+    color: #fcfcfc;
+}
+
+#container {
+    margin: 20px 50px;
+}

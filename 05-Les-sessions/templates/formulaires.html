@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon appli</title>
+</head>
+<body>
+    <h1>Exemples d'éléments de formulaire</h1>
+    <form action="" method="">
+        <p>
+            <!-- Champ de type "text" -->
+            <label for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom">
+        </p>
+        <p>
+            <!-- Champ de type "password" -->
+            <label for="mdp">Mot de passe : </label>
+            <input type="password" name="mdp" id="mdp">
+        </p>
+        <p>
+             <!-- Champ de type "email" -->
+            <label for="email">Email : </label>
+            <input type="email" name="email" id="email">
+        </p>
+        <p>
+            <!-- Champ de type "radio" -->
+            Aimez-vous le chocolat ?
+            <input type="radio" name="choix-chocolat" value="1" id="choix1">
+            <label for="choix1">Non</label>
+            <input type="radio" name="choix-chocolat" value="2" id="choix2">
+            <label for="choix2">Oui</label>
+        </p>
+        <p>
+            <!-- Choix dans une liste d'options avec la balise <select> -->
+            <label for="moyen-transport">Moyen de transport : </label>
+            <select name="transport" id="moyen-transport">
+                <option value="bus">Bus</option>
+                <option value="voiture">Voiture</option>
+                <option value="velo">Vélo</option>
+                <option value="autre">Autre</option>
+            </select>
+        </p>
+        <p>
+            <!-- Zone de texte plus grande avec la balise <textarea> -->
+            <label for="commentaire">Écrire un commentaire : </label>
+            <textarea name="commentaire" id="commentaire" rows="6" cols="50"></textarea>
+        </p>
+        <p>
+            <!-- Bouton d'envoi du formulaire -->
+            <input type="submit" value="Envoyer le formulaire">
+            <!-- <button type="submit">Envoyer le formulaire</button> -->
+        </p>
+    </form>
+</body>
+</html>
