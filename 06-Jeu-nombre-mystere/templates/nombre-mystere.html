@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/jeu.css') }}">
+{% endblock %}
+
+{% block content %}
+<div id="jeu">
+    <h1>Jeu du nombre mystère</h1>
+    {% if session['en_cours'] %}
+        <p>J'ai choisi un entier entre 0 et 100.</p>
+        <form action="{{ url_for('jeu') }}" method="POST">
+            <p>
+                <label for="nombre">Devine le nombre :</label>
+                <input type="number" name="nombre" id="nombre" required autofocus>
+            </p>
+            <p>
+                <input class="btn" type="submit" value="Valider">
+            </p>
+        </form>
+        <hr>
+        {% if message %}
+            {{ message }}
+        {% endif %}
+        <p>Il reste {{ session['nb_essais'] }} tentative(s) !</p>
+        <a href="{{ url_for('jeu') }}">Recommencer</a>
+        {% if session['essais'] != [] %}
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tentative</td>
+                        <td>Résultat</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for essai in session['essais'] %}
+                    <tr>
+                        <td>{{ essai }}</td>
+                        <td>{{ "C'est plus !" if session['nb'] > essai else "C'est moins !" }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% else %}
+        <hr>
+        {% if message %}
+            {{ message }}
+            {% if session['nb_essais'] > 0 %}
+                <p>Le nombre mystère était bien {{ session['nb'] }} !</p>
+                <p>Tu as trouvé en {{ 10-session['nb_essais'] }} tentative(s).</p>
+            {% else %}
+                <p>Le nombre mystère était {{ session['nb'] }}...</p>
+            {% endif %}
+        {% endif %}
+        <a href="{{ url_for('jeu') }}">Rejouer</a>
+    {% endif %}
+</div>
+
+{% endblock %}

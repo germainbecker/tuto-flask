@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Accueil</h1>
+<p>Bonjour {{ session['nom_utilisateur']|title if session['nom_utilisateur'] else 'invité'}}, bienvenue sur mon site !</p>
+{% endblock %}

@@ -1,0 +1,53 @@
+#jeu {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid lightskyblue;
+    border-radius: 20px;
+}
+
+.btn {
+    display: block;
+    margin: auto;
+    border: none;
+    background-color: lightskyblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: dodgerblue;
+    color: white;
+}
+
+#jeu hr {
+    width: 95%;
+    color: lightskyblue; 
+}
+
+#jeu a {
+    display: block;
+    margin: 10px auto;
+    text-decoration: none;
+    color: black;
+    background-color: lightskyblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#jeu a:hover {
+    cursor: pointer;
+    background-color: dodgerblue;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
