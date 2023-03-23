@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ma page Web</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1>Génère une image grâce à l'IA !</h1>
+    <form method="POST" action="">
+      <label for="prompt">Veuillez saisir la description de l'image souhaitée :</label>
+      <textarea id="prompt" name="prompt" rows="5" cols="50"></textarea>
+      <br>
+      <input type="submit" value="Valider">
+    </form>
+    <div id="image-container">
+        {% if image_url %}
+        <img src="{{ image_url }}" alt="image générée par Dall-E">
+        {% endif %}
+    </div>
+  </body>
+</html>
